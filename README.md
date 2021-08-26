@@ -1,2 +1,3 @@
 # dotfiles
-My configs
+
+Dot all the files
