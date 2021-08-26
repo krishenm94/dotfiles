@@ -45,6 +45,10 @@ esac
 
 use_color=true
 
+parse_git_branch() {
+	     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 # Set colorful PS1 only on colorful terminals.
 # dircolors --print-database uses its own built-in database
 # instead of using /etc/DIR_COLORS.  Try to use the external file
@@ -72,7 +76,7 @@ if ${use_color} ; then
 	if [[ ${EUID} == 0 ]] ; then
 		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
 	else
-		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
+		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]\[\033[01;31m\]$(parse_git_branch)\[\033[01;32m\]]\$\[\033[00m\] '
 	fi
 
 	alias ls='ls --color=auto'
@@ -139,13 +143,14 @@ ex ()
 }
 
 # CUSTOM
+
 export VISUAL=$(which nvim)
 export EDITOR=$(which nvim)
 set -o vi
 
 alias sudo="sudo "
 alias sleep="systemctl suspend"
-alias vim="nvim"
+alias vi="nvim"
 
 function pgrep-info() { pgrep "$@"|xargs --no-run-if-empty ps fp; }
 export -f pgrep-info
@@ -156,6 +161,21 @@ export -f pgrep-kill
 function run() { "$@" & disown; }
 . "$HOME/.cargo/env"
 
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
+
 # ARCH
 
-alias update="sudo pacman -Syyu && yay -Sua --devel"
+alias update="sudo pacman -Syu && yay -Sua --devel"
+
+# Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Ruby Version Manager
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
