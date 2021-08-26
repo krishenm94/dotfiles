@@ -6,3 +6,4 @@ alias more=less
 alias sudo="sudo "
 alias sleep="systemctl suspend"
 alias vi="nvim"
+alias view="nvim -R"
