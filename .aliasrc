@@ -1,0 +1,8 @@
+alias cp="cp -i"                          # confirm before overwriting something
+alias df='df -h'                          # human-readable sizes
+alias rm='rm -I'
+alias free='free -m'                      # show sizes in MB
+alias more=less
+alias sudo="sudo "
+alias sleep="systemctl suspend"
+alias vi="nvim"
