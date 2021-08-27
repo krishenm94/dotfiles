@@ -6,5 +6,5 @@ ln -sv $PWD/.functionrc $HOME
 ln -sv $PWD/.envrc $HOME
 ln -sv $PWD/.inputrc $HOME
 
-ln -sv $PWD/.config/redshift.conf $HOME/redshift.conf
-ln -sv $PWD/.config/nvim $HOME/nvim
+ln -sv $PWD/.config/redshift.conf $HOME/.config/redshift.conf
+ln -sv $PWD/.config/nvim $HOME/.config/nvim
