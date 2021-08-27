@@ -2,12 +2,11 @@
 set relativenumber nu
 set clipboard+=unnamedplus
 set tabstop=4 softtabstop=4 noexpandtab shiftwidth=4 smarttab
-set hidden
 set history=1000
 set incsearch nohlsearch
 set errorbells
 set nowrap
-set nobackup noswapfile
+set noswapfile
 set scrolloff=8
 set signcolumn=yes
 set colorcolumn=80
@@ -18,7 +17,10 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'ThePrimeagen/vim-be-good'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+
+source ~/.config/nvim/plug/coc.vim
 
 "" Gruvbox
 let g:gruvbox_contrast_dark='medium'
@@ -44,3 +46,21 @@ augroup COMMANDS
             \ |    highlight SignColumn ctermbg=NONE guibg=NONE
 augroup END
 
+" Might be better to replace this with a treesitter or lsp config
+augroup SYNTAX_HIGHTLIGHTING
+	autocmd BufRead,BufNewFile .aliasrc set ft=sh
+	autocmd BufRead,BufNewFile .functionrc set ft=sh
+augroup END
+
+" Commands
+
+function! ClearRegisters()
+    let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="*+'
+    let i=0
+    while (i<strlen(regs))
+        exec 'let @'.regs[i].'=""'
+        let i=i+1
+    endwhile
+endfunction
+
+command! ClearRegisters call ClearRegisters()
