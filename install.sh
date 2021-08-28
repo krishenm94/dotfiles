@@ -7,12 +7,10 @@ ln -sv $PWD/.envrc $HOME
 ln -sv $PWD/.inputrc $HOME
 
 link-dir-contents(){
-	echo "Linking files in $@"
-	for FILE in $(ls $PWD/$@/); do
-		ln -sv $PWD/$@/$FILE $HOME/$@/$FILE
-	done
+	echo 'Linking files in' $1
+	ln -sv $PWD/$1/* -t $HOME/$1
 }
 
-link-dir-contents ".config"
+link-dir-contents .config
 
 unset link-dir-contents
