@@ -1,9 +1,10 @@
 " Sets
 set relativenumber nu
 set clipboard+=unnamedplus
-set tabstop=4 softtabstop=4 noexpandtab shiftwidth=4 smarttab
+set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
 set history=1000
 set incsearch nohlsearch
+set ignorecase smartcase
 set errorbells
 set nowrap
 set noswapfile
