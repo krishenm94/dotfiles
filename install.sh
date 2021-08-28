@@ -6,5 +6,13 @@ ln -sv $PWD/.functionrc $HOME
 ln -sv $PWD/.envrc $HOME
 ln -sv $PWD/.inputrc $HOME
 
-ln -sv $PWD/.config/redshift.conf $HOME/.config/redshift.conf
-ln -sv $PWD/.config/nvim $HOME/.config/nvim
+link-dir-contents(){
+	echo "Linking files in $@"
+	for FILE in $(ls $PWD/$@/); do
+		ln -sv $PWD/$@/$FILE $HOME/$@/$FILE
+	done
+}
+
+link-dir-contents ".config"
+
+unset link-dir-contents
