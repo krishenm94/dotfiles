@@ -1,10 +1,11 @@
-
-  "languageserver": {
-    "bash": {
-      "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
+{
+    "languageserver": {
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh", "bash"],
+            "ignoredRootPaths": ["~"]
+        }
     },
     "diagnostic-languageserver.filetypes": {
         "sh": "shellcheck"

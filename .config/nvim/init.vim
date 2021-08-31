@@ -9,8 +9,8 @@ set errorbells
 set nowrap
 set noswapfile
 set scrolloff=8
-set signcolumn=yes
 set colorcolumn=80
+set signcolumn=yes
 
 " Plugins
 call plug#begin('~/.vim/plugged')
