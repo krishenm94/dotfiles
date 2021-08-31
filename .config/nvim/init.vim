@@ -34,6 +34,8 @@ Plug 'morhetz/gruvbox'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 source ~/.config/nvim/plug/coc.vim
