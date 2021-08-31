@@ -36,6 +36,7 @@ Plug 'ThePrimeagen/vim-be-good'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'fatih/vim-go'
 call plug#end()
 
 source ~/.config/nvim/plug/coc.vim
