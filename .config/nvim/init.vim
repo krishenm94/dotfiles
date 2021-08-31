@@ -13,6 +13,7 @@ set colorcolumn=80
 set signcolumn=yes
 
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
+let curl_exists=expand('curl')
 if !filereadable(vimplug_exists)
   if !executable(curl_exists)
     echoerr "You have to install curl or first install vim-plug yourself!"
