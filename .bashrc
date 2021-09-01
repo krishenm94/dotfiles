@@ -4,10 +4,6 @@
 
 [[ $- != *i* ]] && return
 
-source .aliasrc
-source .functionrc
-source .envrc
-
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
 # Change the window title of X terminals
@@ -95,3 +91,7 @@ set -o vi
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
 fi
+
+source .aliasrc
+source .functionrc
+source .envrc

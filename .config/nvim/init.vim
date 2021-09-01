@@ -68,6 +68,7 @@ augroup END
 " Might be better to replace this with a treesitter or lsp config
 augroup SYNTAX_HIGHTLIGHTING
 	autocmd BufRead,BufNewFile .aliasrc set ft=sh
+	autocmd BufRead,BufNewFile .envrc set ft=sh
 	autocmd BufRead,BufNewFile .functionrc set ft=sh
 augroup END
 
