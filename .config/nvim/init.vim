@@ -30,6 +30,7 @@ endif
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'psliwka/vim-smoothie'
 Plug 'morhetz/gruvbox'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'ThePrimeagen/vim-be-good'
@@ -41,10 +42,14 @@ call plug#end()
 
 source ~/.config/nvim/plug/coc.vim
 
-"" Gruvbox
+"" gruvbox
 let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_transparent_bg=1
 colorscheme gruvbox
+
+"" vim-smoothie
+let g:smoothie_speed_linear_factor = 12
+let g:smoothie_speed_constant_factor = 15
 
 " Remaps and Leaders
 let mapleader = " "
