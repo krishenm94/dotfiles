@@ -2,14 +2,28 @@
     "languageserver": {
         "golang": {
             "command": "gopls",
-            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-            "filetypes": ["go"]
+            "rootPatterns": [
+                "go.mod",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
+            "filetypes": [
+                "go"
+            ]
         },
         "bash": {
             "command": "bash-language-server",
-            "args": ["start"],
-            "filetypes": ["sh", "bash"],
-            "ignoredRootPaths": ["~"]
+            "args": [
+                "start"
+            ],
+            "filetypes": [
+                "sh",
+                "bash"
+            ],
+            "ignoredRootPaths": [
+                "~"
+            ]
         }
     },
     "diagnostic-languageserver.filetypes": {
@@ -17,5 +31,17 @@
     },
     "diagnostic-languageserver.formatFiletypes": {
         "sh": "shfmt"
+    },
+    "diagnostic-languageserver.formatters": {
+        "shfmt": {
+            "command": "shfmt",
+            "args": [
+                "-i",
+                "2",
+                "-bn",
+                "-ci",
+                "-sr"
+            ]
+        }
     }
 }
