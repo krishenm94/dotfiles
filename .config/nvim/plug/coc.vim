@@ -1,7 +1,10 @@
 " Extensions
 let g:coc_global_extensions = [
             \ 'coc-sh',
-            \ 'coc-go'
+            \ 'coc-go',
+            \ 'coc-html',
+            \ 'coc-json',
+            \ 'coc-css'
             \ ]
 
 " TextEdit might fail if hidden is not set.
@@ -70,7 +73,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
+vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
