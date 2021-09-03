@@ -12,45 +12,6 @@ set scrolloff=8
 set colorcolumn=80
 set signcolumn=yes
 
-let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
-let curl_exists=expand('curl')
-if !filereadable(vimplug_exists)
-  if !executable(curl_exists)
-    echoerr "You have to install curl or first install vim-plug yourself!"
-    execute "q!"
-  endif
-  echo "Installing Vim-Plug..."
-  echo ""
-  silent exec "!"curl_exists" -fLo " . shellescape(vimplug_exists) . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-  let g:not_finish_vimplug = "yes"
-
-  autocmd VimEnter * PlugInstall
-endif
-
-" Plugins
-call plug#begin('~/.vim/plugged')
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'psliwka/vim-smoothie'
-Plug 'morhetz/gruvbox'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'ThePrimeagen/vim-be-good'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'fatih/vim-go'
-call plug#end()
-
-source ~/.config/nvim/plug/coc.vim
-
-"" gruvbox
-let g:gruvbox_contrast_dark='medium'
-let g:gruvbox_transparent_bg=1
-colorscheme gruvbox
-
-"" vim-smoothie
-let g:smoothie_speed_linear_factor = 12
-let g:smoothie_speed_constant_factor = 15
-
 " Remaps and Leaders
 let mapleader = " "
 
@@ -89,3 +50,44 @@ function! ClearRegisters()
 endfunction
 
 command! ClearRegisters call ClearRegisters()
+
+" Plugins
+
+let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
+let curl_exists=expand('curl')
+if !filereadable(vimplug_exists)
+  if !executable(curl_exists)
+    echoerr "You have to install curl or first install vim-plug yourself!"
+    execute "q!"
+  endif
+  echo "Installing Vim-Plug..."
+  echo ""
+  silent exec "!"curl_exists" -fLo " . shellescape(vimplug_exists) . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  let g:not_finish_vimplug = "yes"
+
+  autocmd VimEnter * PlugInstall
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'psliwka/vim-smoothie'
+Plug 'morhetz/gruvbox'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'ThePrimeagen/vim-be-good'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'fatih/vim-go'
+call plug#end()
+
+source ~/.config/nvim/plug/coc.vim
+
+"" gruvbox
+let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_transparent_bg=1
+colorscheme gruvbox
+
+"" vim-smoothie
+let g:smoothie_speed_linear_factor = 12
+let g:smoothie_speed_constant_factor = 15
+
