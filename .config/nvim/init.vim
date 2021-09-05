@@ -69,6 +69,7 @@ if !filereadable(vimplug_exists)
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'psliwka/vim-smoothie'
 Plug 'morhetz/gruvbox'
@@ -95,3 +96,7 @@ colorscheme gruvbox
 let g:smoothie_speed_linear_factor = 12
 let g:smoothie_speed_constant_factor = 15
 
+"" airline
+let airline_theme='deus'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#coc#enabled = 1
