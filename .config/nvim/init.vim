@@ -13,7 +13,7 @@ set colorcolumn=80
 set signcolumn=yes
 
 " Remaps and Leaders
-let mapleader = " "
+let mapleader=" "
 
 " Autocommands
 fun! TrimWhitespace()

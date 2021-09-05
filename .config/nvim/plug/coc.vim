@@ -2,7 +2,12 @@
 let g:coc_global_extensions = [
             \ 'coc-sh',
             \ 'coc-go',
+            \ 'coc-json',
+            \ 'coc-yaml',
             \ 'coc-html',
+            \ 'coc-css',
+            \ 'coc-tsserver',
+            \ 'coc-eslint',
             \ 'coc-prettier',
             \ 'coc-solargraph'
             \ ]

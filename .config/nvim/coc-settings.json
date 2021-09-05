@@ -1,4 +1,5 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
   "languageserver": {
     "golang": {
       "command": "gopls",
