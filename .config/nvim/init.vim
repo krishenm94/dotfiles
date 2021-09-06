@@ -69,11 +69,15 @@ if !filereadable(vimplug_exists)
 endif
 
 call plug#begin('~/.vim/plugged')
+
+" telescope & dependencies (also uses `ripgrep` by default`)
+Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
 Plug 'psliwka/vim-smoothie'
 Plug 'morhetz/gruvbox'
-Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
@@ -86,6 +90,7 @@ Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 source ~/.config/nvim/plug/coc.vim
+source ~/.config/nvim/plug/telescope.vim
 
 "" gruvbox
 let g:gruvbox_contrast_dark='medium'
