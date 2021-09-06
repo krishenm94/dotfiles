@@ -2,7 +2,12 @@
 let g:coc_global_extensions = [
             \ 'coc-sh',
             \ 'coc-go',
+            \ 'coc-json',
+            \ 'coc-yaml',
             \ 'coc-html',
+            \ 'coc-css',
+            \ 'coc-tsserver',
+            \ 'coc-eslint',
             \ 'coc-prettier',
             \ 'coc-solargraph'
             \ ]
@@ -73,8 +78,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+vmap <leader>cf  <Plug>(coc-format-selected)
+nmap <leader>cf  <Plug>(coc-format-selected)
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')

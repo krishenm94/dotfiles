@@ -13,7 +13,7 @@ set colorcolumn=80
 set signcolumn=yes
 
 " Remaps and Leaders
-let mapleader = " "
+let mapleader=" "
 
 " Autocommands
 fun! TrimWhitespace()
@@ -69,18 +69,28 @@ if !filereadable(vimplug_exists)
 endif
 
 call plug#begin('~/.vim/plugged')
+
+" telescope & dependencies (also uses `ripgrep` by default`)
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
 Plug 'psliwka/vim-smoothie'
 Plug 'morhetz/gruvbox'
-Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'fatih/vim-go'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 source ~/.config/nvim/plug/coc.vim
+source ~/.config/nvim/plug/telescope.vim
 
 "" gruvbox
 let g:gruvbox_contrast_dark='medium'
@@ -91,3 +101,7 @@ colorscheme gruvbox
 let g:smoothie_speed_linear_factor = 12
 let g:smoothie_speed_constant_factor = 15
 
+"" airline
+let airline_theme='deus'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#coc#enabled = 1
