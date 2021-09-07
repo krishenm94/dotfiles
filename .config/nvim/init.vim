@@ -15,41 +15,42 @@ set signcolumn=yes
 " Remaps and Leaders
 let mapleader=" "
 
-nmap <C-n> :bn<CR>  " Next buffer in list
-nmap <C-p> :bp<CR>  " Previous buffer in list
+nmap <C-k> :bn<CR>  " Next buffer in list
+nmap <C-j> :bp<CR>  " Previous buffer in list
+nmap <C-l> <C-^>    " Previous visited buffer
 
 " Autocommands
 fun! TrimWhitespace()
-	let l:save = winsaveview()
-	keeppatterns %s/\s\+$//e
-	call winrestview(l:save)
+  let l:save = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:save)
 endfun
 
 augroup COMMANDS
-	autocmd!
-	autocmd BufWritePre * :call TrimWhitespace()
-	" Workaround for transparent background
-	autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
-            \ |    highlight LineNr     ctermbg=NONE guibg=NONE
-            \ |    highlight SignColumn ctermbg=NONE guibg=NONE
+  autocmd!
+  autocmd BufWritePre * :call TrimWhitespace()
+  " Workaround for transparent background
+  autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
+        \ |    highlight LineNr     ctermbg=NONE guibg=NONE
+        \ |    highlight SignColumn ctermbg=NONE guibg=NONE
 augroup END
 
 " Might be better to replace this with a treesitter or lsp config
 augroup SYNTAX_HIGHTLIGHTING
-	autocmd BufRead,BufNewFile .aliasrc set ft=sh
-	autocmd BufRead,BufNewFile .envrc set ft=sh
-	autocmd BufRead,BufNewFile .functionrc set ft=sh
+  autocmd BufRead,BufNewFile .aliasrc set ft=sh
+  autocmd BufRead,BufNewFile .envrc set ft=sh
+  autocmd BufRead,BufNewFile .functionrc set ft=sh
 augroup END
 
 " Commands
 
 function! ClearRegisters()
-    let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="*+'
-    let i=0
-    while (i<strlen(regs))
-        exec 'let @'.regs[i].'=""'
-        let i=i+1
-    endwhile
+  let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="*+'
+  let i=0
+  while (i<strlen(regs))
+    exec 'let @'.regs[i].'=""'
+    let i=i+1
+  endwhile
 endfunction
 
 command! ClearRegisters call ClearRegisters()
