@@ -16,10 +16,11 @@ let mapleader=" "
 
 " Remaps
 
-nmap <C-k> :bn<CR>  " Jump to next buffer in list
-nmap <C-j> :bp<CR>  " Jump to previous buffer in list
+nmap <C-k> <cmd>bn<cr>  " Jump to next buffer in list
+nmap <C-j> <cmd>bp<cr>  " Jump to previous buffer in list
 nmap <C-l> <C-^>    " Jump to previous visited buffer
-nmap <cmd>bq<cr> <cmd>bq<cr> " Close current buffer
+nnoremap <leader>bq <cmd>bd<cr> " Close current buffer
+nnoremap <leader>bo <cmd>w<bar>%bd<bar>e#<bar>bd#<cr> " Close all but current buffer
 
 " Autocommands
 fun! TrimWhitespace()
