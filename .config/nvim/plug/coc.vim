@@ -9,7 +9,8 @@ let g:coc_global_extensions = [
             \ 'coc-tsserver',
             \ 'coc-eslint',
             \ 'coc-prettier',
-            \ 'coc-solargraph'
+            \ 'coc-solargraph',
+            \ 'coc-snippets'
             \ ]
 
 " TextEdit might fail if hidden is not set.
@@ -127,3 +128,12 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" coc-snippets
+
+let g:coc_snippet_next = '<c-k>'
+let g:coc_snippet_prev = '<c-j>'
+
+"" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+"" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

@@ -94,6 +94,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 source ~/.config/nvim/plug/coc.vim
