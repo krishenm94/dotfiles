@@ -15,6 +15,9 @@ set signcolumn=yes
 " Remaps and Leaders
 let mapleader=" "
 
+nmap <C-n> :bn<CR>  " Next buffer in list
+nmap <C-p> :bp<CR>  " Previous buffer in list
+
 " Autocommands
 fun! TrimWhitespace()
 	let l:save = winsaveview()
