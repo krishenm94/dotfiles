@@ -12,12 +12,14 @@ set scrolloff=8
 set colorcolumn=80
 set signcolumn=yes
 
-" Remaps and Leaders
 let mapleader=" "
 
-nmap <C-k> :bn<CR>  " Next buffer in list
-nmap <C-j> :bp<CR>  " Previous buffer in list
-nmap <C-l> <C-^>    " Previous visited buffer
+" Remaps
+
+nmap <C-k> :bn<CR>  " Jump to next buffer in list
+nmap <C-j> :bp<CR>  " Jump to previous buffer in list
+nmap <C-l> <C-^>    " Jump to previous visited buffer
+nmap <cmd>bq<cr> <cmd>bq<cr> " Close current buffer
 
 " Autocommands
 fun! TrimWhitespace()
