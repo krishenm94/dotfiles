@@ -8,3 +8,6 @@ alias sleep='systemctl suspend'
 alias vi='nvim'
 alias view='nvim -R'
 alias clip-tmux='tmux showb | xclip -sel c -i'
+
+# git
+alias gittree='git log --oneline --decorate --all --graph'
