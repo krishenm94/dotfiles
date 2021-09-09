@@ -91,6 +91,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
 Plug 'honza/vim-snippets'
+Plug 'preservim/nerdtree'
 
 " cosmetics
 Plug 'morhetz/gruvbox'
