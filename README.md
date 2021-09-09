@@ -10,9 +10,3 @@ Ex: `coc-sh` requires the `bash-language-server`
 
 This is similar for the `coc-diagnostic` extension which requires backends.
 Ex: `fmt`=`sh` uses `shellcheck`
-
-### Plugins
-
-#### vim-go
-
-After installing `vim-go` via `vim-plug`. Run in `nvim`, `GoInstallBinaries`

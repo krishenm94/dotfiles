@@ -89,7 +89,7 @@ Plug 'ThePrimeagen/vim-be-good'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
