@@ -117,3 +117,6 @@ let g:smoothie_speed_constant_factor = 15
 let airline_theme='deus'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#coc#enabled = 1
+
+"" vim-fugitive
+nmap <leader>gg <cmd>tab G<CR>
