@@ -1,3 +1,4 @@
+# shellcheck disable=2148
 #
 # ~/.bashrc
 #
@@ -92,6 +93,9 @@ if command -v tmux &>/dev/null && [ -z "$TMUX" ]; then
 	tmux attach -t default || tmux new -s default
 fi
 
+# shellcheck disable=1091
 source .aliasrc
+# shellcheck disable=1091
 source .functionrc
+# shellcheck disable=1091
 source .envrc
