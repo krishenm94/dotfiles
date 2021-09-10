@@ -120,3 +120,6 @@ let g:airline#extensions#coc#enabled = 1
 
 "" vim-fugitive
 nmap <leader>gg <cmd>tab G<CR>
+
+"" nerdtree
+let g:NERDTreeShowHidden=1
