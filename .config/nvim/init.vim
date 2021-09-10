@@ -85,7 +85,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
