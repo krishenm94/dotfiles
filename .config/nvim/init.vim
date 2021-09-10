@@ -3,7 +3,7 @@ set relativenumber nu
 set clipboard+=unnamedplus
 set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
 set history=1000
-set incsearch nohlsearch
+set incsearch
 set ignorecase smartcase
 set errorbells
 set nowrap
