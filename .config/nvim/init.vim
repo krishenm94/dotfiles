@@ -16,6 +16,8 @@ let mapleader=" "
 
 " Remaps
 
+nnoremap ; :
+nnoremap : ;
 nmap <C-k> <cmd>bn<cr>  " Jump to next buffer in list
 nmap <C-j> <cmd>bp<cr>  " Jump to previous buffer in list
 nmap <C-l> <C-^>    " Jump to previous visited buffer
