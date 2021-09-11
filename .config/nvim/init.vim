@@ -77,9 +77,12 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" telescope & dependencies (also uses `ripgrep` by default`)
+" telescope & dependencies
+" External dependencies: ripgrep, fd
+" :checkhealth telescope ;)
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
