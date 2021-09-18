@@ -94,6 +94,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
 Plug 'honza/vim-snippets'
 Plug 'preservim/nerdtree'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 " cosmetics
 Plug 'morhetz/gruvbox'
