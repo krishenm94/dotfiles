@@ -121,13 +121,11 @@ let airline_theme='deus'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#coc#enabled = 1
 
-<<<<<<< HEAD
 "" vim-fugitive
 nmap <leader>gg <cmd>tab G<CR>
 
 "" nerdtree
 let g:NERDTreeShowHidden=1
-=======
+
 " gopls is hanging while loading packages on work mac
 let g:go_gopls_enabled = 0
->>>>>>> f6b58e6 (gopls hanging)
