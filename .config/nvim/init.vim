@@ -94,6 +94,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
 Plug 'honza/vim-snippets'
 Plug 'preservim/nerdtree'
+Plug 'PhilRunninger/nerdtree-visual-selection'
 
 " cosmetics
 Plug 'morhetz/gruvbox'
