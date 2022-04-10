@@ -98,4 +98,5 @@ source .aliasrc
 # shellcheck disable=1091
 source .functionrc
 # shellcheck disable=1091
+export HISTFILE=~/.bash_history
 source .envrc
