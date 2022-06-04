@@ -1,3 +1,6 @@
+" nvim `checkhealth` fixes
+" https://github.com/neovim/neovim/wiki/FAQ
+
 " Sets
 set relativenumber nu
 set clipboard+=unnamedplus
