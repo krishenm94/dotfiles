@@ -4,7 +4,7 @@ lsp.on_attach(function(client, bufnr)
     -- see :help lsp-zero-keybindings
     -- to learn the available actions
     lsp.default_keymaps({ buffer = bufnr })
-    -- vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', { buffer = bufnr })
+    vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', { buffer = bufnr })
 end)
 
 lsp.format_on_save({
@@ -21,7 +21,6 @@ lsp.format_on_save({
         ['jsonls'] = { "json", "jsonc" },
         ['bashls'] = { "sh" },
         ['gopls'] = { "go", "gomod", "gowork", "gotmpl" }
-        -- ['ast_grep'] = { "c", "cpp", "rust", "go", "java", "python", "javascript", "typescript", "html", "css", "kotlin", "dart", "lua" },
         -- if you have a working setup with null-ls
         -- you can specify filetypes it can format.
         -- ['null-ls'] = {'javascript', 'typescript'},
@@ -33,7 +32,6 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
--- require('lspconfig').ast_grep.setup {}
 require('lspconfig').html.setup { capabilities = capabilities }
 require('lspconfig').cssls.setup { capabilities = capabilities }
 require('lspconfig').tsserver.setup {}

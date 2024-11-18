@@ -12,6 +12,7 @@ set noswapfile
 set scrolloff=8
 set colorcolumn=120
 set signcolumn=yes
+set colorcolumn=80
 ]])
 
 -- set ignorecase smartcase
