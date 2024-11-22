@@ -16,7 +16,7 @@ lsp.format_on_save({
         ['lua_ls'] = { 'lua' },
         ['rust_analyzer'] = { 'rust' },
         ['html'] = { 'html' },
-        ['cssls'] = { 'css', 'scss' },
+        ['cssls'] = { 'css', 'scss', 'less' },
         ['tsserver'] = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
         ['jsonls'] = { "json", "jsonc" },
         ['bashls'] = { "sh" },
