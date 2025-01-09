@@ -15,9 +15,9 @@ lsp.format_on_save({
     servers = {
         ['lua_ls'] = { 'lua' },
         ['rust_analyzer'] = { 'rust' },
-        ['html'] = { 'html' },
+        ['html'] = { 'html', 'htmx' },
         ['cssls'] = { 'css', 'scss', 'less' },
-        ['tsserver'] = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+        ['ts_ls'] = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
         ['jsonls'] = { "json", "jsonc" },
         ['bashls'] = { "sh" },
         ['gopls'] = { "go", "gomod", "gowork", "gotmpl" }
@@ -32,11 +32,11 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+require('lspconfig').ts_ls.setup {}
 require('lspconfig').html.setup { capabilities = capabilities }
 require('lspconfig').cssls.setup { capabilities = capabilities }
-require('lspconfig').tsserver.setup {}
 require('lspconfig').jsonls.setup {}
 require('lspconfig').bashls.setup {}
-require('lspconfig').gopls.setup {}
+-- require('lspconfig').gopls.setup {}
 
 lsp.setup()
