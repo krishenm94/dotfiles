@@ -23,3 +23,5 @@ fvf() {
 
 # git
 alias gittree='git log --oneline --decorate --all --graph'
+
+alias fgb='git checkout $(git branch | fzf)'

@@ -17,11 +17,34 @@ set colorcolumn=80
 
 -- set ignorecase smartcase
 -- set nowrap
+-- vim.diagnostic.config({
+--     virtual_text = false,
+-- })
 
 vim.g.mapleader = ' ' -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 -- Mappings
+---- Close current buffer
 vim.keymap.set('n', '<Leader>q', '<cmd>enew<bar>bd #<CR>')
+
+---- Toggle diagnostic window
+vim.keymap.set('n', '<Leader>i', function()
+    -- If we find a floating window, close it.
+    local found_float = false
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+        if vim.api.nvim_win_get_config(win).relative ~= '' then
+            vim.api.nvim_win_close(win, true)
+            found_float = true
+        end
+    end
+
+    if found_float then
+        return
+    end
+
+    vim.diagnostic.open_float(nil, { focus = false, scope = 'cursor' })
+end, { desc = 'Toggle Diagnostics' })
+
 
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -36,6 +59,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
+
+vim.api.nvim_create_user_command("Cppath", function()
+    local path = vim.fn.expand("%:p")
+    vim.fn.setreg("+", path)
+    vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, {})
 
 -- Example using a list of specs with the default options
 
