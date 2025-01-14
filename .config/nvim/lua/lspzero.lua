@@ -7,6 +7,15 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', { buffer = bufnr })
 end)
 
+local function ts_organize_imports()
+    local params = {
+        command = "_typescript.organizeImports",
+        arguments = { vim.api.nvim_buf_get_name(0) },
+        title = ""
+    }
+    vim.lsp.buf.execute_command(params)
+end
+
 lsp.format_on_save({
     format_opts = {
         async = false,
@@ -32,7 +41,15 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-require('lspconfig').ts_ls.setup {}
+require('lspconfig').ts_ls.setup {
+    capabilities = capabilities,
+    commands = {
+        TSOrganizeImports = {
+            ts_organize_imports,
+            description = "Organize Imports for Typescript Language Server"
+        }
+    }
+}
 require('lspconfig').html.setup { capabilities = capabilities }
 require('lspconfig').cssls.setup { capabilities = capabilities }
 require('lspconfig').jsonls.setup {}
