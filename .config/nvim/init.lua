@@ -133,6 +133,13 @@ vim.keymap.set("n", "<leader>hk", function() require('harpoon.ui').nav_file(3) e
 vim.keymap.set("n", "<leader>hl", function() require('harpoon.ui').nav_file(4) end)
 require("telescope").load_extension('harpoon')
 
+local telescope = require('telescope')
+telescope.setup {
+    defaults = {
+        layout_strategy = "vertical"
+    },
+}
+
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
