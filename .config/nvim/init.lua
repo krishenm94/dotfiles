@@ -15,12 +15,6 @@ set signcolumn=yes
 set colorcolumn=80
 ]])
 
--- set ignorecase smartcase
--- set nowrap
--- vim.diagnostic.config({
---     virtual_text = false,
--- })
-
 vim.g.mapleader = ' ' -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 -- Mappings
@@ -60,6 +54,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+-- Copy path to clipboard
 vim.api.nvim_create_user_command("Cppath", function()
     local path = vim.fn.expand("%:p")
     vim.fn.setreg("+", path)
@@ -139,7 +134,9 @@ require('lazy').setup({
 
 ---- Color Scheme
 vim.opt.termguicolors = true
-vim.cmd.colorscheme('gruvbox')
+vim.cmd("let g:gruvbox_transparent_bg = 1")
+vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
+vim.cmd("colorscheme gruvbox")
 
 require('neoconf').setup({
     -- override any of the default settings here

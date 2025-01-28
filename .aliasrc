@@ -25,3 +25,5 @@ fvf() {
 alias gittree='git log --oneline --decorate --all --graph'
 
 alias fgb='git checkout $(git branch | fzf)'
+
+alias killprocport='(){ lsof -t -i tcp:$1 | xargs kill ;}'
