@@ -3,7 +3,7 @@ set notimeout
 set encoding=utf-8
 set relativenumber nu
 set clipboard+=unnamedplus
-set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
+set tabstop=8 softtabstop=2 expandtab shiftwidth=2 smarttab
 set expandtab
 set history=1000
 set incsearch

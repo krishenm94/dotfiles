@@ -24,6 +24,9 @@ fvf() {
 # git
 alias gittree='git log --oneline --decorate --all --graph'
 
+alias gitbdmergedmaster='git branch -d $(git branch --merged=master | grep -v master)'
+alias gitbdmergedmain='git branch -d $(git branch --merged=main | grep -v main)'
+
 alias fgb='git checkout $(git branch | fzf)'
 
 alias killprocport='(){ lsof -t -i tcp:$1 | xargs kill ;}'
