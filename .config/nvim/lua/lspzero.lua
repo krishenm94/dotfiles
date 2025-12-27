@@ -17,7 +17,7 @@ lsp.format_on_save({
         ['rust_analyzer'] = { 'rust' },
         ['html'] = { 'html' },
         ['cssls'] = { 'css', 'scss', 'less' },
-        ['tsserver'] = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+        ['ts_ls'] = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
         ['jsonls'] = { "json", "jsonc" },
         ['bashls'] = { "sh" },
         ['gopls'] = { "go", "gomod", "gowork", "gotmpl" }
@@ -31,12 +31,10 @@ lsp.format_on_save({
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-require('lspconfig').html.setup { capabilities = capabilities }
-require('lspconfig').cssls.setup { capabilities = capabilities }
-require('lspconfig').tsserver.setup {}
-require('lspconfig').jsonls.setup {}
-require('lspconfig').bashls.setup {}
-require('lspconfig').gopls.setup {}
-
-lsp.setup()
+vim.lsp.config('lua_ls', {})
+vim.lsp.config('gopls', {})
+vim.lsp.config('ts_ls', {})
+vim.lsp.config('jsonls', {})
+vim.lsp.config('bashls', {})
+vim.lsp.config('html', {})
+vim.lsp.config('cssls', {})
